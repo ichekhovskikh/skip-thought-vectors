@@ -36,6 +36,7 @@ def trainer(X,
             n_words=20000,
             maxlen_w=30,
             optimizer='adam',
+            learning_rate = 0.01,
             batch_size = 64,
             saveto='/u/rkiros/research/semhash/models/toy.npz',
             dictionary='/ais/gobi3/u/rkiros/bookgen/book_dictionary_large.pkl',
@@ -141,7 +142,7 @@ def trainer(X,
     train_iter = homogeneous_data.HomogeneousData(trainX, batch_size=batch_size, maxlen=maxlen_w)
 
     uidx = 0
-    lrate = 0.01
+    lrate = learning_rate
     for eidx in range(max_epochs):
         n_samples = 0
 
