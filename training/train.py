@@ -154,7 +154,7 @@ def trainer(X,
 
             x, x_mask, y, y_mask, z, z_mask = homogeneous_data.prepare_data(x, y, z, worddict, maxlen=maxlen_w, n_words=n_words)
 
-            if len(x) < 1:
+            if x is None or len(x) < 1:
                 print('Minibatch with zero sample under length ', maxlen_w)
                 uidx -= 1
                 continue
